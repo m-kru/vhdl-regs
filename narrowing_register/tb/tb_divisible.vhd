@@ -1,7 +1,7 @@
 library ieee;
    use ieee.std_logic_1164.all;
 
-library simple;
+library regs;
 
 entity tb_divisible is
 end entity;
@@ -26,7 +26,7 @@ begin
    clk <= not clk after C_CLK_PERIOD / 2;
 
 
-   DUT : entity simple.Narrowing_Register
+   DUT : entity regs.Narrowing_Register
    generic map (
       INPUT_WIDTH  => C_INPUT_WIDTH,
       OUTPUT_WIDTH => C_OUTPUT_WIDTH

@@ -7,7 +7,7 @@ filesets:
     files:
       - src/dynamic_register_chain.vhd
     file_type: vhdlSource-2008
-    logical_name: simple
+    logical_name: regs
 
   tb:
     files:

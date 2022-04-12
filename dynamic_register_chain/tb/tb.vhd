@@ -4,7 +4,7 @@ library ieee;
    use ieee.math_real.ceil;
    use ieee.math_real.log2;
 
-library simple;
+library regs;
 
 entity tb is
 end entity;
@@ -29,7 +29,7 @@ begin
    clk <= not clk after CLK_PERIOD / 2;
 
 
-   DUT : entity simple.Dynamic_Register_Chain
+   DUT : entity regs.Dynamic_Register_Chain
    generic map (
       WIDTH      => WIDTH,
       MAX_LENGTH => MAX_LENGTH,

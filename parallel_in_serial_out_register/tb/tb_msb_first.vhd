@@ -2,7 +2,7 @@ library ieee;
   use ieee.std_logic_1164.all;
   use ieee.numeric_std.all;
 
-library simple;
+library regs;
 
 entity tb_msb_first is
 end entity;
@@ -23,7 +23,7 @@ begin
 
   clk <= not clk after CLK_PERIOD/2;
 
-  DUT : entity simple.parallel_in_serial_out_register
+  DUT : entity regs.parallel_in_serial_out_register
   generic map (
     INPUT_WIDTH  => 4,
     OUTPUT_WIDTH => 2,

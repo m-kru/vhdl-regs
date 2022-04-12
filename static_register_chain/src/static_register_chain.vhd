@@ -1,11 +1,11 @@
 -- SPDX-License-Identifier: MIT
--- https://github.com/m-kru/vhdl-simple
+-- https://github.com/m-kru/vhdl-regs
 -- Copyright (c) 2021 Michał Kruszewski
 
 library ieee;
    use ieee.std_logic_1164.all;
 
--- Static_Register_Chain is a simple static chain of registers.
+-- Static_Register_Chain is a regs static chain of registers.
 --
 -- It can be used for multiple purposes such as registering
 -- combinatorial signals (LENGTH = 1) or adjusting delays.

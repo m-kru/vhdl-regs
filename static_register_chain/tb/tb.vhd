@@ -2,7 +2,7 @@ library ieee;
    use ieee.std_logic_1164.all;
    use ieee.numeric_std.all;
 
-library simple;
+library regs;
 
 entity tb is
 end entity;
@@ -25,7 +25,7 @@ begin
    clk <= not clk after C_CLK_PERIOD / 2;
 
 
-   DUT : entity simple.Static_Register_Chain
+   DUT : entity regs.Static_Register_Chain
    generic map (
       WIDTH  => WIDTH,
       LENGTH => LENGTH

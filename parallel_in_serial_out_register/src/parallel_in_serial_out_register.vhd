@@ -1,5 +1,5 @@
 -- SPDX-License-Identifier: MIT
--- https://github.com/m-kru/vhdl-simple
+-- https://github.com/m-kru/vhdl-regs
 -- Copyright (c) 2020 Michał Kruszewski
 
 library ieee;
