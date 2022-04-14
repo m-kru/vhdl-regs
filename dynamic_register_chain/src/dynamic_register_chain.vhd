@@ -8,7 +8,7 @@ library ieee;
    use ieee.math_real.ceil;
    use ieee.math_real.log2;
 
--- Dynamic_Register_Chain is a regs dynamic chain of registers.
+-- Dynamic_Register_Chain is a simple dynamic chain of registers.
 -- Dynamic means that the length of the chain can be configured via port (len_i).
 --
 -- It can be used for example for dynamic adjustment of delays.
