@@ -21,21 +21,21 @@ entity Shift_Register is
    generic (
       LENGTH      : positive  := 1;
       WIDTH       : positive;
-      INIT_VALUE  : std_logic := '0';
-      RESET_VALUE : std_logic := '0'
+      INIT_VALUE  : std_logic_vector(WIDTH - 1 downto 0) := (others => '0');
+      RESET_VALUE : std_logic_vector(WIDTH - 1 downto 0) := (others => '0')
    );
    port (
       clk_i    : in  std_logic;
       clk_en_i : in  std_logic := '1';
       rst_i    : in  std_logic := '0';
       d_i      : in  std_logic_vector(WIDTH - 1 downto 0);
-      q_o      : out std_logic_vector(WIDTH - 1 downto 0) := (others => INIT_VALUE)
+      q_o      : out std_logic_vector(WIDTH - 1 downto 0) := INIT_VALUE
    );
 end entity;
 
 architecture rtl of Shift_Register is
 
-   signal chain : types.slv_vector(0 to LENGTH - 1)(WIDTH - 1 downto 0) := (others => (others => INIT_VALUE));
+   signal chain : types.slv_vector(0 to LENGTH - 1)(WIDTH - 1 downto 0) := (others => INIT_VALUE);
 
 begin
 
@@ -53,7 +53,7 @@ begin
 
             if rst_i = '1' then
                for i in 0 to LENGTH - 1 loop
-                  chain(i) <= (others => RESET_VALUE);
+                  chain(i) <= RESET_VALUE;
                end loop;
             end if;
          end if;

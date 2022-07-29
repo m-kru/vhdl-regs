@@ -27,8 +27,8 @@ entity Dynamic_Shift_Register is
    generic (
       MAX_LENGTH  : positive;
       WIDTH       : positive;
-      INIT_VALUE  : std_logic := '0';
-      RESET_VALUE : std_logic := '0';
+      INIT_VALUE  : std_logic_vector(WIDTH - 1 downto 0) := (others => '0');
+      RESET_VALUE : std_logic_vector(WIDTH - 1 downto 0) := (others =>'0');
       REGISTER_OUTPUTS : boolean := true
    );
    port (
@@ -37,16 +37,16 @@ entity Dynamic_Shift_Register is
       rst_i    : in  std_logic := '0';
       d_i      : in  std_logic_vector(WIDTH - 1 downto 0);
       len_i    : in  unsigned(integer(ceil(log2(real(MAX_LENGTH)))) - 1 downto 0);
-      q_o      : out std_logic_vector(WIDTH - 1 downto 0) := (others => INIT_VALUE)
+      q_o      : out std_logic_vector(WIDTH - 1 downto 0) := INIT_VALUE
    );
 end entity;
 
 
 architecture rtl of Dynamic_Shift_Register is
 
-   signal chain : types.slv_vector(0 to MAX_LENGTH - 1)(WIDTH - 1 downto 0) := (others => (others => INIT_VALUE));
+   signal chain : types.slv_vector(0 to MAX_LENGTH - 1)(WIDTH - 1 downto 0) := (others => INIT_VALUE);
 
-   signal q : std_logic_vector(WIDTH - 1 downto 0) := (others => INIT_VALUE);
+   signal q : std_logic_vector(WIDTH - 1 downto 0) := INIT_VALUE;
 
 begin
 
@@ -64,7 +64,7 @@ begin
 
             if rst_i = '1' then
                for i in 0 to MAX_LENGTH - 1 loop
-                  chain(i) <= (others => RESET_VALUE);
+                  chain(i) <= RESET_VALUE;
                end loop;
             end if;
          end if;
