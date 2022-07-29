@@ -6,10 +6,10 @@ library ieee;
 
 library regs;
 
-entity tb is
+entity tb_dynamic_shift_register is
 end entity;
 
-architecture test of tb is
+architecture test of tb_dynamic_shift_register is
 
    constant WIDTH : positive := 1;
    constant MAX_LENGTH : positive := 5;
@@ -29,7 +29,7 @@ begin
    clk <= not clk after CLK_PERIOD / 2;
 
 
-   DUT : entity regs.Dynamic_Register_Chain
+   DUT : entity regs.Dynamic_Shift_Register
    generic map (
       WIDTH      => WIDTH,
       MAX_LENGTH => MAX_LENGTH,

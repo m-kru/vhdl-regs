@@ -8,7 +8,7 @@ library ieee;
    use ieee.math_real.ceil;
    use ieee.math_real.log2;
 
--- Dynamic_Register_Chain is a simple dynamic chain of registers.
+-- Dynamic_Shift_Register is a simple dynamic chain of registers.
 -- Dynamic means that the length of the chain can be configured via port (len_i).
 --
 -- It can be used for example for dynamic adjustment of delays.
@@ -20,7 +20,7 @@ library ieee;
 -- If REGISTER_OUTPUTS is true, then the q_o is delayed by one extra clock cycle.
 -- The longer the chain, the bigger the output multiplexer.
 -- Adding register at the output can potentially break the critical path.
-entity Dynamic_Register_Chain is
+entity Dynamic_Shift_Register is
    generic (
       MAX_LENGTH  : positive;
       WIDTH       : positive;
@@ -39,7 +39,7 @@ entity Dynamic_Register_Chain is
 end entity;
 
 
-architecture rtl of Dynamic_Register_Chain is
+architecture rtl of Dynamic_Shift_Register is
 
    type t_chain is array (0 to MAX_LENGTH - 1) of std_logic_vector(WIDTH - 1 downto 0);
 
