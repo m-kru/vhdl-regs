@@ -1,17 +1,17 @@
 CAPI=2:
 
-name: :vhdl-regs:static_register_chain
+name: :vhdl-regs:shift_register
 
 filesets:
   src:
     files:
-      - src/static_register_chain.vhd
+      - src/shift_register.vhd
     file_type: vhdlSource-2008
     logical_name: regs
 
   tb:
     files:
-      - tb/tb.vhd
+      - tb/tb_shift_register.vhd
     file_type: vhdlSource-2008
 
 targets:
@@ -21,7 +21,7 @@ targets:
 
   tb:
     default_tool: ghdl
-    toplevel: tb
+    toplevel: tb_shift_register
     filesets:
       - src
       - tb

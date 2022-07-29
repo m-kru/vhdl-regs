@@ -5,13 +5,16 @@
 library ieee;
    use ieee.std_logic_1164.all;
 
--- Static_Register_Chain is a regs static chain of registers.
+-- Shift_Register is a classic shift register.
 --
--- It can be used for multiple purposes such as registering
--- combinatorial signals (LENGTH = 1) or adjusting delays.
+-- It can be used for multiple purposes such as:
+--   1. registering combinatorial signals (LENGTH = 1),
+--   2. static delays adjustment,
+--   3. creating arbitrary periodic waveforms (q_o feeded into d_i).
 --
--- Setting LENGTH to 0 is not possible, as it makes no sense.
-entity Static_Register_Chain is
+-- Setting LENGTH to 0 is not possible, as the same effect can be achieved
+-- with directly connecting signals.
+entity Shift_Register is
    generic (
       LENGTH      : positive  := 1;
       WIDTH       : positive;
@@ -27,7 +30,7 @@ entity Static_Register_Chain is
    );
 end entity;
 
-architecture rtl of Static_Register_Chain is
+architecture rtl of Shift_Register is
 
    type t_chain is array (0 to LENGTH - 1) of std_logic_vector(WIDTH - 1 downto 0);
 

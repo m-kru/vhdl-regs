@@ -4,10 +4,10 @@ library ieee;
 
 library regs;
 
-entity tb is
+entity tb_shift_register is
 end entity;
 
-architecture test of tb is
+architecture test of tb_shift_register is
 
    constant WIDTH : positive := 8;
    constant LENGTH : positive := 3;
@@ -25,7 +25,7 @@ begin
    clk <= not clk after C_CLK_PERIOD / 2;
 
 
-   DUT : entity regs.Static_Register_Chain
+   DUT : entity regs.Shift_Register
    generic map (
       WIDTH  => WIDTH,
       LENGTH => LENGTH
