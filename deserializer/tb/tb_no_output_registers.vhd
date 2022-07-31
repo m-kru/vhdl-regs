@@ -4,10 +4,10 @@ library ieee;
 
 library regs;
 
-entity tb_no_output_registers is
+entity tb_deserializer_no_output_registers is
 end entity;
 
-architecture tb_arch of tb_no_output_registers is
+architecture tb_arch of tb_deserializer_no_output_registers is
 
   constant CLK_PERIOD : time := 10 ns;
   signal clk   : std_logic := '0';
@@ -22,7 +22,7 @@ begin
 
   clk <= not clk after CLK_PERIOD/2;
 
-  DUT : entity regs.serial_in_parallel_out_register
+  DUT : entity regs.Deserializer
   generic map (
     OUTPUT_WIDTH     => 4,
     REGISTER_OUTPUTS => false

@@ -1,11 +1,11 @@
 CAPI=2:
 
-name: :vhdl-regs:serial_in_parallel_out_register
+name: :vhdl-regs:deserializer
 
 filesets:
   src:
     files:
-      - src/serial_in_parallel_out_register.vhd
+      - src/deserializer.vhd
     file_type: vhdlSource-2008
     logical_name: regs
 
@@ -26,14 +26,14 @@ targets:
 
   tb_default_generics:
     default_tool: ghdl
-    toplevel: tb_default_generics
+    toplevel: tb_deserializer_default_generics
     filesets:
       - src
       - tb_default_generics
 
   tb_no_output_registers:
     default_tool: ghdl
-    toplevel: tb_no_output_registers
+    toplevel: tb_deserializer_no_output_registers
     filesets:
       - src
       - tb_no_output_registers

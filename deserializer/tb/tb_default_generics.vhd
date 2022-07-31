@@ -4,10 +4,10 @@ library ieee;
 
 library regs;
 
-entity tb_default_generics is
+entity tb_deserializer_default_generics is
 end entity;
 
-architecture tb_arch of tb_default_generics is
+architecture tb_arch of tb_deserializer_default_generics is
 
   constant CLK_PERIOD : time := 10 ns;
   signal clk   : std_logic := '0';
@@ -23,7 +23,7 @@ begin
 
   clk <= not clk after CLK_PERIOD/2;
 
-  DUT : entity regs.serial_in_parallel_out_register
+  DUT : entity regs.Deserializer
   generic map (
      OUTPUT_WIDTH => 8
   )

@@ -5,12 +5,12 @@
 library ieee;
   use ieee.std_logic_1164.all;
 
--- Serial-In Parallel-Out (SIPO) register.
+-- Deserializer entity is a Serial-In Parallel-Out (SIPO) register.
 --
 -- SIPO register which can be configured to work with or without output
 -- register. When REGISTER_OUTPUTS is set to false, the stb_i input can
 -- be left unconnected.
-entity Serial_In_Parallel_Out_Register is
+entity Deserializer is
   generic (
     OUTPUT_WIDTH     : positive;
     INIT_VALUE       : std_logic := '0';
@@ -29,7 +29,7 @@ entity Serial_In_Parallel_Out_Register is
 
 end entity;
 
-architecture rtl of Serial_In_Parallel_Out_Register is
+architecture rtl of Deserializer is
 
   signal q_internal : std_logic_vector(OUTPUT_WIDTH - 1 downto 0) := (others => INIT_VALUE);
   signal q_output   : std_logic_vector(OUTPUT_WIDTH - 1 downto 0) := (others => INIT_VALUE);
