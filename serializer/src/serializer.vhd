@@ -5,14 +5,14 @@
 library ieee;
   use ieee.std_logic_1164.all;
 
--- Parallel-In Serial-Out (PISO) register with configurable shift direction.
+-- Serializer is a Parallel-In Serial-Out (PISO) register.
 --
 -- If LSB_FIRST is set to true then Least Significant Bit (LSB)
 -- will appear at the output as the first one.
 -- If LSB_FIRST is set to false then Most Significant Bit (MSB) will
 -- appear at the output as the first one. Width of the output is also
 -- configurable, but it must be less than or equal to parallel input width.
-entity Parallel_In_Serial_Out_Register is
+entity Serializer is
   generic (
     INPUT_WIDTH  : positive;
     OUTPUT_WIDTH : positive;
@@ -38,7 +38,7 @@ begin
 end entity;
 
 
-architecture rtl of Parallel_In_Serial_Out_Register is
+architecture rtl of Serializer is
 
   signal internal_reg : std_logic_vector(INPUT_WIDTH - 1 downto 0) := (others => INIT_VALUE);
 

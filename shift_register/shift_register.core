@@ -5,7 +5,7 @@ name: :vhdl-regs:shift_register
 filesets:
   src:
     depend:
-      - mkru:vhdl:types
+      - mkru:vhdl-types:types
     files:
       - src/shift_register.vhd
     file_type: vhdlSource-2008
