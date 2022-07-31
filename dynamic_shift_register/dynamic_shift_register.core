@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: :vhdl-regs:dynamic_shift_register
+name: mkru:vhdl-regs:dynamic_shift_register
 
 filesets:
   src:

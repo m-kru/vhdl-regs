@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: :vhdl-regs:reductor
+name: mkru:vhdl-regs:reductor
 
 filesets:
   src:

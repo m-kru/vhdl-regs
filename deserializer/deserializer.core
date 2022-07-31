@@ -1,6 +1,6 @@
 CAPI=2:
 
-name: :vhdl-regs:deserializer
+name: mkru:vhdl-regs:deserializer
 
 filesets:
   src:
