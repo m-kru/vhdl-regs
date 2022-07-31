@@ -11,8 +11,8 @@ library ieee;
 library ltypes;
    use ltypes.types;
 
--- Dynamic_Shift_Register is a simple dynamic chain of registers.
--- Dynamic means that the length of the chain can be configured via port (len_i).
+-- Dynamic_Shift_Register is a simple variable length shift register.
+-- The length can be configured via the len_i port.
 --
 -- It can be used for example for dynamic adjustment of delays.
 --
