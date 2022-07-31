@@ -1,0 +1,22 @@
+CAPI=2:
+
+name: :vhdl_simple:false_path_synchronizer
+
+filesets:
+  src:
+    files:
+      - src/false_path_synchronizer.vhd
+    file_type: vhdlSource-2008
+    logical_name: simple
+
+  vivado_constr:
+    files:
+      - constr/false_path_synchronizer.xdc : {file_type : xdc}
+
+  tcl:
+    files:
+      - constr/false_path_synchronizer.tcl : {file_type : tclSource}
+
+targets:
+  default:
+    filesets: [src, "tool_vivado? (vivado_constr)", tcl]
