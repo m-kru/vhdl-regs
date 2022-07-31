@@ -1,11 +1,11 @@
 CAPI=2:
 
-name: :vhdl-regs:narrowing_register
+name: :vhdl-regs:reductor
 
 filesets:
   src:
     files:
-      - src/narrowing_register.vhd
+      - src/reductor.vhd
     file_type: vhdlSource-2008
     logical_name: regs
 
@@ -26,14 +26,14 @@ targets:
 
   tb:
     default_tool: ghdl
-    toplevel: tb
+    toplevel: tb_reductor
     filesets:
       - src
       - tb
 
   tb_divisible:
     default_tool: ghdl
-    toplevel: tb_divisible
+    toplevel: tb_reductor_divisible
     filesets:
       - src
       - tb_divisible

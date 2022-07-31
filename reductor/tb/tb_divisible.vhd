@@ -3,11 +3,11 @@ library ieee;
 
 library regs;
 
-entity tb_divisible is
+entity tb_reductor_divisible is
 end entity;
 
 
-architecture test of tb_divisible is
+architecture test of tb_reductor_divisible is
 
    constant C_INPUT_WIDTH  : positive := 10;
    constant C_OUTPUT_WIDTH : positive := 2;
@@ -26,7 +26,7 @@ begin
    clk <= not clk after C_CLK_PERIOD / 2;
 
 
-   DUT : entity regs.Narrowing_Register
+   DUT : entity regs.Reductor
    generic map (
       INPUT_WIDTH  => C_INPUT_WIDTH,
       OUTPUT_WIDTH => C_OUTPUT_WIDTH

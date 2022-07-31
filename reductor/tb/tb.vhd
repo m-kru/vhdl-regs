@@ -3,11 +3,11 @@ library ieee;
 
 library regs;
 
-entity tb is
+entity tb_reductor is
 end entity;
 
 
-architecture test of tb is
+architecture test of tb_reductor is
 
    constant C_INPUT_WIDTH  : positive := 7;
    constant C_OUTPUT_WIDTH : positive := 3;
@@ -26,7 +26,7 @@ begin
    clk <= not clk after C_CLK_PERIOD / 2;
 
 
-   DUT : entity regs.Narrowing_Register
+   DUT : entity regs.Reductor
    generic map (
       INPUT_WIDTH  => C_INPUT_WIDTH,
       OUTPUT_WIDTH => C_OUTPUT_WIDTH

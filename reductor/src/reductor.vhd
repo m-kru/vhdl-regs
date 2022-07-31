@@ -5,7 +5,7 @@
 library ieee;
    use ieee.std_logic_1164.all;
 
--- Narrowing_Register is a register for passing data from the domain with
+-- Reductor is a register for passing data from the domain with
 -- primary data width N to the domain with primary data width M < N.
 --
 -- It is user responsibility to provide d_i and stb_i in proper
@@ -13,7 +13,7 @@ library ieee;
 -- valid bits in the internal register is less than OUTPUT_WIDTH.
 --
 -- SHIFT_VALUE is the value shifted when the d_i data is not provided.
-entity Narrowing_Register is
+entity Reductor is
    generic (
       INPUT_WIDTH  : positive;
       OUTPUT_WIDTH : positive;
@@ -36,7 +36,7 @@ begin
 end entity;
 
 
-architecture rtl of Narrowing_Register is
+architecture rtl of Reductor is
 
    attribute dont_touch : string;
 
