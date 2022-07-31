@@ -7,7 +7,7 @@ filesets:
     files:
       - src/false_path_synchronizer.vhd
     file_type: vhdlSource-2008
-    logical_name: simple
+    logical_name: regs
 
   vivado_constr:
     files:
