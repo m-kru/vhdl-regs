@@ -8,9 +8,6 @@ library ieee;
    use ieee.math_real.ceil;
    use ieee.math_real.log2;
 
-library ltypes;
-   use ltypes.types;
-
 -- Dynamic_Shift_Register is a simple variable length shift register.
 -- The length can be configured via the len_i port.
 --
@@ -44,7 +41,8 @@ end entity;
 
 architecture rtl of Dynamic_Shift_Register is
 
-   signal chain : types.slv_vector(0 to MAX_LENGTH - 1)(WIDTH - 1 downto 0) := (others => INIT_VALUE);
+   type t_chain is array (0 to MAX_LENGTH - 1) of std_logic_vector(WIDTH - 1 downto 0);
+   signal chain : t_chain := (others => INIT_VALUE);
 
    signal q : std_logic_vector(WIDTH - 1 downto 0) := INIT_VALUE;
 

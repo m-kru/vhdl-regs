@@ -5,9 +5,6 @@
 library ieee;
    use ieee.std_logic_1164.all;
 
-library ltypes;
-   use ltypes.types;
-
 -- Shift_Register is a classic shift register.
 --
 -- It can be used for multiple purposes such as:
@@ -35,7 +32,8 @@ end entity;
 
 architecture rtl of Shift_Register is
 
-   signal chain : types.slv_vector(0 to LENGTH - 1)(WIDTH - 1 downto 0) := (others => INIT_VALUE);
+   type t_chain is array (0 to LENGTH - 1) of std_logic_vector(WIDTH - 1 downto 0);
+   signal chain : t_chain := (others => INIT_VALUE);
 
 begin
 

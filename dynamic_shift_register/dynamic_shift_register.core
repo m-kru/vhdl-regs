@@ -4,8 +4,6 @@ name: mkru:vhdl-regs:dynamic_shift_register
 
 filesets:
   src:
-    depend:
-      - mkru:vhdl-types:types
     files:
       - src/dynamic_shift_register.vhd
     file_type: vhdlSource-2008
