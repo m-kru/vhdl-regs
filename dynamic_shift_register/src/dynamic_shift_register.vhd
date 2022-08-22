@@ -20,6 +20,11 @@ library ieee;
 -- If REGISTER_OUTPUTS is true, then the q_o is delayed by one extra clock cycle.
 -- The longer the chain, the bigger the output multiplexer.
 -- Adding register at the output can potentially break the critical path.
+--
+-- Vivado is not able to infer SRL, even if the rst_i port is driven with a constant value.
+-- However, it is able to infer SRL when rst_i port is driven with a constant value and
+-- RESET_VALUE value is set to (others => '-'). Tested with Vivado 2021.2.
+-- The SRL inference is unknown with other tools.
 entity Dynamic_Shift_Register is
    generic (
       MAX_LENGTH  : positive;
